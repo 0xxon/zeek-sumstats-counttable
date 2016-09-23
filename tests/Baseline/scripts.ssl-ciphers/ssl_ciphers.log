@@ -1,0 +1,10 @@
+#separator \x09
+#set_separator	,
+#empty_field	(empty)
+#unset_field	-
+#path	ssl_ciphers
+#open	2016-09-23-19-05-31
+#fields	ts	resp_h	cipher	percent	connections
+#types	time	addr	string	double	count
+1394747130.771837	74.125.239.129	TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256	1.0	2
+#close	2016-09-23-19-05-31

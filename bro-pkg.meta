@@ -1,2 +1,3 @@
 [package]
-version = 0.0.1
+description = Two-dimensional buckets for sumstats (count occurences per $str).
+tags = sumstats, summary statistics

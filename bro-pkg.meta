@@ -1,4 +1,4 @@
 [package]
 description = Two-dimensional buckets for sumstats (count occurences per $str).
 tags = sumstats, summary statistics
-test_command = cd testing && btest -d
+test_command = cd tests && btest -d

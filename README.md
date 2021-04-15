@@ -1,4 +1,4 @@
-[counttable.bro](counttable.bro)
+[counttable.zeek](counttable.zeek)
 --------------------------------
 
 This script provives the COUNTTABLE type for the Bro summary statistics
@@ -19,10 +19,10 @@ Example
 The following example counts the number of times each HTTP status code was
 encountered, counted by server address.
 
-```bro
-@load packages/bro-sumstats-counttable
+```zeek
+@load packages/zeek-sumstats-counttable
 
-event bro_init()
+event zeek_init()
 	{
 	local r1 = SumStats::Reducer($stream="status.code", $apply=set(SumStats::COUNTTABLE));
 	SumStats::create([$name="http-status-codes",

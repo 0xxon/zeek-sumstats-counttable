@@ -3,7 +3,7 @@
 #
 # Questions -> johanna@icir.org
 
-# @TEST-EXEC: bro -C -r $TRACES/google-duplicate.trace ../../.. %INPUT
+# @TEST-EXEC: zeek -C -r $TRACES/google-duplicate.trace ../../.. %INPUT
 # @TEST-EXEC: btest-diff ssl_ciphers.log
 
 @load base/protocols/ssl
@@ -29,7 +29,7 @@ export {
 	global log_ciphers: event(rec: Info);
 }
 
-event bro_init()
+event zeek_init()
 	{
 	Log::create_stream(LOG, [$columns=Info, $ev=log_ciphers, $path="ssl_ciphers"]);
 
@@ -60,7 +60,7 @@ event bro_init()
 			]);
     }
 
-event ssl_server_hello(c: connection, version: count, possible_ts: time, server_random: string, session_id: string, cipher: count, comp_method: count)
+event ssl_server_hello(c: connection, version: count, record_version: count, possible_ts: time, server_random: string, session_id: string, cipher: count, comp_method: count)
 	{
 	#if (!Site::is_local_addr(c$id$resp_h))
 	#	return;
